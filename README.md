@@ -82,7 +82,7 @@ cp .env.example .env
 docker compose up --build
 ```
 
-The full Docker stack exposes only the dashboard and API ports. MongoDB and Redis stay internal to the compose network, which avoids conflicts when Redis or MongoDB are already running on the host machine.
+The full Docker stack exposes the dashboard and API ports. The API and worker use host networking so Gemini and Serper outbound HTTPS calls work reliably in Docker environments where bridge-network egress is restricted. MongoDB and Redis run in containers and are published on alternate local ports (`27018` and `6380`) for the API/worker containers.
 
 ## Repository structure
 
