@@ -32,6 +32,13 @@ The repository is a TypeScript monorepo with:
 - Gemini API key
 - Serper API key
 
+### Clone the repository
+
+```bash
+git clone git@github.com:faizkhan01/recruiting-automation-platform.git
+cd recruiting-automation-platform
+```
+
 ### Local setup
 
 ```bash
