@@ -1,0 +1,23 @@
+{
+  "name": "recruiting-automation-platform",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "CHOKIDAR_USEPOLLING=true CHOKIDAR_INTERVAL=750 concurrently -n api,worker,web -c blue,magenta,green \"npm run dev -w @recruit/api\" \"npm run dev:worker -w @recruit/api\" \"npm run dev -w @recruit/web\"",
+    "build": "npm run build -w @recruit/api && npm run build -w @recruit/web",
+    "test": "npm run test -w @recruit/api",
+    "typecheck": "npm run typecheck -w @recruit/api && npm run typecheck -w @recruit/web",
+    "infra:up": "docker compose up -d mongo redis",
+    "infra:down": "docker compose down",
+    "start": "concurrently -n api,worker \"npm run start -w @recruit/api\" \"npm run start:worker -w @recruit/api\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
