@@ -19,6 +19,10 @@ The repository is a TypeScript monorepo with:
 - Serper web search integration
 - Swagger/OpenAPI documentation
 
+## Dashboard preview
+
+![Recruiting Automation Platform dashboard showing open roles](docs/images/dashboard-open-roles.png)
+
 ## Quick start
 
 ### Prerequisites
