@@ -1,0 +1,14 @@
+.git
+.env
+node_modules
+dist
+coverage
+*.log
+*.tsbuildinfo
+
+apps/*/node_modules
+apps/*/dist
+apps/*/*.tsbuildinfo
+
+.DS_Store
+docs/images/*.png

@@ -41,6 +41,8 @@ npm run infra:up
 npm run dev
 ```
 
+`npm run infra:up` starts MongoDB and Redis with host ports exposed for local API development.
+
 Open:
 
 - Dashboard: http://localhost:5173
@@ -79,6 +81,8 @@ Keep API keys server-side only. Do not place Gemini or Serper keys in `apps/web`
 cp .env.example .env
 docker compose up --build
 ```
+
+The full Docker stack exposes only the dashboard and API ports. MongoDB and Redis stay internal to the compose network, which avoids conflicts when Redis or MongoDB are already running on the host machine.
 
 ## Repository structure
 

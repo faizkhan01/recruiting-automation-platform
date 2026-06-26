@@ -10,8 +10,8 @@
     "build": "npm run build -w @recruit/api && npm run build -w @recruit/web",
     "test": "npm run test -w @recruit/api",
     "typecheck": "npm run typecheck -w @recruit/api && npm run typecheck -w @recruit/web",
-    "infra:up": "docker compose up -d mongo redis",
-    "infra:down": "docker compose down",
+    "infra:up": "docker compose -f docker-compose.yml -f docker-compose.infra.yml up -d mongo redis",
+    "infra:down": "docker compose -f docker-compose.yml -f docker-compose.infra.yml down",
     "start": "concurrently -n api,worker \"npm run start -w @recruit/api\" \"npm run start:worker -w @recruit/api\""
   },
   "devDependencies": {
